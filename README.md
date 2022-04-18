@@ -26,12 +26,6 @@ The board is loaded with all kinds of sensors, LEDs, touchpads, buttons and more
 #### Download the latest CircuitPython for Circuit Playground Express!
 * CircuitPython for CPB: https://circuitpython.org/board/circuitplayground_bluefruit/
 
-#### Are you on Windows 7?
-You need to install drivers before plugging in! See [Welcome->Installing
-CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython). 
-
-Windows 10, Mac, and Linux don’t need drivers.
-
 #### Plug It In!
 Use a micro-USB cable with data (beware charge/power-only cables). A USB drive called **CIRCUITPY**
 will appear. If there’s a **code.py** on **CIRCUITPY**, it will run automatically. 
@@ -114,3 +108,8 @@ The REPL works like a standard Python prompt. Try the following:
 >>> 1+2
 3
 ```
+#### Beyond the Circuit Playground Bluefruit
+There are currently [72 CircuitPython-compatible Adafruit boards](https://adafru.it/cp-boards).
+There are also a multitude of sensor breakouts, accessories, and more with CircuitPython support.
+If you’re interested in continuing your exploration, check out the Adafruit shop at
+[adafruit.com](https://adafruit.com)!
