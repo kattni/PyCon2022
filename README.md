@@ -28,21 +28,17 @@ The board is loaded with all kinds of sensors, LEDs, touchpads, buttons and more
 
 #### Plug It In!
 Use a micro-USB cable with data (beware charge/power-only cables). A USB drive called **CIRCUITPY**
-will appear. If there’s a **code.py** on **CIRCUITPY**, it will run automatically. 
+will appear. If there’s a **code.py** on **CIRCUITPY**, it will run automatically.
 
-#### Avoiding Filesystem Corruption
-Windows and Linux don’t write back data to **CIRCUITPY** immediately: they can delay for 10s of
-seconds. (Not an issue on MacOS.) **Eject or sync after you copy files, and always before you
-unplug or press the Reset button.** Otherwise **CIRCUITPY** may become corrupted. Continue reading
-to see editors that write immediately so you don’t need to Eject or sync every time you edit.
-If **CIRCUITPY** does get corrupted, see **_Restoring or Installing CircuitPython_** in this
-Quickstart.
+#### Auto-Reload
+Every time you write a file, **code.py** will be re-run, unless you are in the REPL. Just edit
+**code.py** and see it run right away. This makes for a fast workflow.
 
-#### Editing Code
+#### Editing Code (Recommended Editors)
 If you already have a favorite code editor, you can use it. Be sure you’re using one that writes
 back immediately: VS Code, Atom (install the fsync-on-save package), Sublime, gedit, vim with `-n`
-option, emacs, PyCharm with Safe Write. **_Don’t_ use** Notepad, nano, IDLE. See [Welcome->Creating
-and Editing Code](https://learn.adafruit.com/welcome-to-circuitpython/creating-and-editing-code)
+option, emacs, PyCharm with Safe Write. **_Don’t_ use** Notepad, nano, IDLE. See [Welcome->Advanced
+Setup->Recommended Editors](https://learn.adafruit.com/welcome-to-circuitpython/recommended-editors)
 for more details.
 
 #### Another Editor Option
@@ -51,9 +47,13 @@ Mu is the easiest editor to use: it includes a Python editor and easy serial REP
 The latest version for Windows and Mac are available at https://codewith.mu. For Linux, or any OS,
 you can create a `venv` and use `pip3` to install Mu: `pip3 install --user mu-editor`
 
-#### Auto-Reload
-Every time you write a file, **code.py** will be re-run, unless you are in the REPL. Just edit
-**code.py** and see it run right away. This makes for a fast workflow.
+#### Avoiding Filesystem Corruption
+Windows and Linux don’t write back data to **CIRCUITPY** immediately: they can delay for 10s of
+seconds. (Not an issue on MacOS.) **Eject or sync after you copy files, and always before you
+unplug or press the Reset button.** Otherwise **CIRCUITPY** may become corrupted. See **_Editing
+Code (Recommended Editors)_** above, so you don’t need to Eject or sync every time you edit.
+If **CIRCUITPY** does get corrupted, see **_Restoring or Installing CircuitPython_** in this
+Quickstart.
 
 #### Libraries
 CircuitPython has built in native modules, but also has libraries written in Python (which are
@@ -85,10 +85,14 @@ results you expect, try connecting to the serial console. It's great for debuggi
 
 The serial console and REPL are built into Mu - simply click the icon labeled “Serial”. 
 
-If not using Mu, on Windows, try **Putty** or **Tera Term**. See [Welcome->Advanced Setup->Advanced
+If not using Mu, you have a number of options.
+
+On Windows, try **Putty** or **Tera Term**. See [Welcome->Advanced Setup->Advanced
 Serial Console On
 Windows](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-windows)
-for more details. On Mac and Linux, try **`screen`**, **`tio`**, or **picocom**, or any other
+for more details. 
+
+On Mac and Linux, try **`screen`**, **`tio`**, or **picocom**, or any other
 terminal emulator you may already be using. Use tab completion for the paths on Mac
 `/dev/tty.usbmodem*` or Linux `/dev/ttyACM*` while entering `screen` commands. See
 [Welcome->Advanced Setup->Advanced Serial Console on Mac](https://learn.adafruit.com/welcome-to-circuitpython/advanced-serial-console-on-mac-and-linux) and
@@ -108,6 +112,7 @@ The REPL works like a standard Python prompt. Try the following:
 >>> 1+2
 3
 ```
+
 #### Beyond the Circuit Playground Bluefruit
 There are currently [72 CircuitPython-compatible Adafruit boards](https://adafru.it/cp-boards).
 There are also a multitude of sensor breakouts, accessories, and more with CircuitPython support.
