@@ -1,5 +1,5 @@
 # PyCon2022
-![Blinka!](/.assets/Blinka_CLUE_conference_badge.png "CircuitPython's Blinka")
+![Code + Community = CircuitPython!](/.assets/Blinka_Code_Community.png "Code + Community = CircuitPython")
 
 This repo contains the CircuitPython Quickstart worksheet and example code for the PyCon 2022
 CircuitPython Open Spaces! It also contains various additional content including slides for
