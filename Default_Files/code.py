@@ -67,7 +67,7 @@ touch_colors = (RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE)
 touch_wav_files = ("audio/1.wav", "audio/2.wav", "audio/3.wav", "audio/4.wav",
                    "audio/5.wav", "audio/6.wav", "audio/7.wav")
 
-mode = 0
+MODE = 0
 while True:
     # Press button A to cycle between four different modes (0-3).
     # Press button B to turn on the little red LED.
@@ -75,9 +75,9 @@ while True:
     if button_event:  # If there is a button event, continue onto the following code.
         # print(button_event)  # Uncomment this to print the button event.
         if button_event.pressed:  # When button A or B is pressed...
-            mode += 1  # ...increase the mode by 1.
-            if mode > 3:  # If the mode is greater than 3...
-                mode = 0  # ...set the mode back to 0.
+            MODE += 1  # ...increase the mode by 1.
+            if MODE > 3:  # If the mode is greater than 3...
+                MODE = 0  # ...set the mode back to 0.
             # print(mode)  # Uncomment this to print the mode number to the serial console.
         if button_event.pressed and button_event.key_number == 1:  # When button B is pressed...
             cp.red_led = True  # ...turn on the little red LED.
@@ -89,11 +89,11 @@ while True:
     # If the switch is to the right, enable wav playback in the touchpad demo.
     WAV_PLAYBACK = not cp.switch
 
-    if mode == 0:
+    if MODE == 0:
         # Rainbow comet demo.
         rainbow_comet.animate()
 
-    elif mode == 1:
+    elif MODE == 1:
         # Touchpad demo.
         cp.pixels.auto_write = True  # Enable auto_write for the touchpad demo.
         # Read the state of the available touchpads.
@@ -107,7 +107,7 @@ while True:
         if not any(touch_pads):  # If no pads are touched...
             cp.pixels.fill((0, 0, 0))  # ...turn off the LEDs.
 
-    elif mode == 2:
+    elif MODE == 2:
         # NeoPixel LED Light Meter demo.
         cp.pixels.auto_write = False  # Disable auto_write for the light meter demo.
         cp.pixels.fill((0, 0, 0))  # Turn off all the pixels.
@@ -117,7 +117,7 @@ while True:
         cp.pixels.show()  # Called because auto_write is disabled.
         time.sleep(0.05)
 
-    elif mode == 3:
+    elif MODE == 3:
         # NeoPixel LED Acceleration demo.
         cp.pixels.auto_write = True  # Enable auto_write for the acceleration demo.
         acceleration = cp.acceleration  # To avoid reading the sensor data twice.

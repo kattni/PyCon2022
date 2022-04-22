@@ -6,8 +6,8 @@ CircuitPython Open Spaces.**
 
 If you wish to return the board to its default state, simply copy the following file and folders
 (including all of their contents) to your CIRCUITPY drive, overwriting the existing files. **This
-will erase any changes you've made so if you wish to keep your changes, please backup the code.py
-file first!**
+will erase any changes you've made so if you wish to keep your changes, please back up your
+existing code.py file first!**
 * code.py
 * audio/
 * lib/
