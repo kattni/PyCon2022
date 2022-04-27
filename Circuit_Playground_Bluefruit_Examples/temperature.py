@@ -1,5 +1,5 @@
 """This example uses the temperature sensor, located next to the picture of a thermometer on the
-CPX. It prints the temperature """
+CP. It prints the temperature """
 import time
 import board
 import adafruit_thermistor

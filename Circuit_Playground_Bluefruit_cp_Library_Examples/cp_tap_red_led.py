@@ -1,5 +1,5 @@
 """This example turns on the little red LED and prints to the serial console when you double-tap
-the CPX!"""
+the CP!"""
 import time
 from adafruit_circuitplayground import cp
 
