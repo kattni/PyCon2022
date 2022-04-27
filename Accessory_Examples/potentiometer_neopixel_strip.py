@@ -1,10 +1,10 @@
 """This example requires a potentiometer and a NeoPixel strip. Talk to the team to get one of each!
 
-Connect the blue clip on the potentiometer to pad A0.
+Connect the blue clip on the potentiometer to pad A2.
 Connect the black clip to a GND pad.
 Connect the red clip to a 3.3v pad.
 
-Connect the white clip on the NeoPixel strip to pad A7.
+Connect the white clip on the NeoPixel strip to pad TX.
 Connect the black clip on the NeoPixel strip to a GND pad.
 Connect the red clip on the NeoPixel strip to the VOUT pad.
 
@@ -18,9 +18,9 @@ import simpleio
 import analogio
 import neopixel
 
-strip = neopixel.NeoPixel(board.A7, 30, auto_write=False)
+strip = neopixel.NeoPixel(board.TX, 30, auto_write=False)
 strip.brightness = 0.3
-potentiometer = analogio.AnalogIn(board.A0)
+potentiometer = analogio.AnalogIn(board.A2)
 
 
 def get_voltage(pin):

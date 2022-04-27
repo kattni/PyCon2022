@@ -3,7 +3,8 @@ generates a sine wave sample, and then plays a tone for 1 second."""
 import time
 import array
 import math
-import audioio
+from audiopwmio import PWMAudioOut as AudioOut
+from audiocore import RawSample
 import board
 import digitalio
 
@@ -22,8 +23,8 @@ speaker_enable.direction = digitalio.Direction.OUTPUT
 speaker_enable.value = True
 
 # Set up audio to use the speaker.
-audio = audioio.AudioOut(board.SPEAKER)
-sine_wave_sample = audioio.RawSample(sine_wave)
+audio = AudioOut(board.SPEAKER)
+sine_wave_sample = RawSample(sine_wave)
 
 # Play the sine_wave sample repeatedly for 1 second and stop.
 audio.play(sine_wave_sample, loop=True)

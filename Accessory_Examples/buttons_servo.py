@@ -11,13 +11,13 @@ Press the buttons to watch the servo rotate!"""
 import board
 import pwmio
 from adafruit_motor import servo
-from adafruit_circuitplayground.express import cpx
+from adafruit_circuitplayground import cp
 
 pwm = pwmio.PWMOut(board.A1, duty_cycle=2 ** 15, frequency=50)
 servo = servo.Servo(pwm)
 
 while True:
-    if cpx.button_a:
+    if cp.button_a:
         servo.angle = 180
-    elif cpx.button_b:
+    elif cp.button_b:
         servo.angle = 0

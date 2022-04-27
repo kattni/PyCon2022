@@ -1,8 +1,8 @@
 """This example uses the slide switch to control the little red LED."""
-from adafruit_circuitplayground.express import cpx
+from adafruit_circuitplayground import cp
 
 while True:
-    if cpx.switch:
-        cpx.red_led = True
+    if cp.switch:
+        cp.red_led = True
     else:
-        cpx.red_led = False
+        cp.red_led = False

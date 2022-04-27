@@ -1,5 +1,5 @@
 """This example turns on, or "fills", all the NeoPixels red!"""
-from adafruit_circuitplayground.express import cpx
+from adafruit_circuitplayground import cp
 
 while True:
-    cpx.pixels.fill((50, 0, 0))
+    cp.pixels.fill((50, 0, 0))

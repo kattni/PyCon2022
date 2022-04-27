@@ -1,11 +1,11 @@
-"""THIS EXAMPLE REQUIRES A WAV FILE FROM THE ADDITIONAL_CONTENT FOLDER IN THE PyCon2019 REPO!
-Copy the "dip.wav" and "rise.wav" files to your CIRCUITPY drive.
+"""THIS EXAMPLE REQUIRES A WAV FILE FROM THE ADDITIONAL_CONTENT FOLDER IN THE PyCon2022 REPO!
+Copy the "ring.wav" and "think.wav" files to your CIRCUITPY drive.
 
 Once the files are copied, this example plays a different wav file for each button pressed!"""
-from adafruit_circuitplayground.express import cpx
+from adafruit_circuitplayground import cp
 
 while True:
-    if cpx.button_a:
-        cpx.play_file("dip.wav")
-    if cpx.button_b:
-        cpx.play_file("rise.wav")
+    if cp.button_a:
+        cp.play_file("ring.wav")
+    if cp.button_b:
+        cp.play_file("think.wav")

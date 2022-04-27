@@ -4,15 +4,16 @@ Copy the "dip.wav" file to your CIRCUITPY drive.
 Once the file is copied, this example plays a wav file using the speaker on the CPX, the grey
 square located next to the picture of musical notes on the board."""
 import board
-import audioio
+from audiocore import WaveFile
+from audiopwmio import PWMAudioOut as AudioOut
 import digitalio
 
 speaker_enable = digitalio.DigitalInOut(board.SPEAKER_ENABLE)
 speaker_enable.switch_to_output(value=True)
 
-data = open("dip.wav", "rb")
-wav = audioio.WaveFile(data)
-a = audioio.AudioOut(board.SPEAKER)
+data = open("space.wav", "rb")
+wav = WaveFile(data)
+a = AudioOut(board.SPEAKER)
 
 print("Playing file.")
 a.play(wav)
