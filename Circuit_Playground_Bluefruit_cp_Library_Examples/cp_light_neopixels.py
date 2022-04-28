@@ -1,19 +1,24 @@
-"""THIS EXAMPLE REQUIRES A SEPARATE LIBRARY BE LOADED ONTO YOUR CIRCUITPY DRIVE.
-This example requires the simpleio.mpy library.
-
-This example uses the light sensor on the CP, located net to the picture of the eye on the board.
+"""
+This example uses the light sensor on the CPB, located net to the picture of the eye on the board.
 Once you have the library loaded, try shining a flashlight on your CP to watch the number of
-NeoPixels lit up increase, or try covering up the light sensor to watch the number decrease."""
+NeoPixels lit up increase, or try covering up the light sensor to watch the number decrease.
+"""
 import time
 from adafruit_circuitplayground import cp
-import simpleio
 
 cp.pixels.auto_write = False
 cp.pixels.brightness = 0.3
 
+
+def scale_range(value):
+    """Scale a value from 0-320 (light range) to 0-9 (NeoPixel range, 10 total LEDs).
+    Allows remapping light value to pixel position for light meter demo."""
+    return round(value / 320 * 10)
+
+
 while True:
     # light value remapped to pixel position
-    peak = simpleio.map_range(cp.light, 0, 320, 0, 10)
+    peak = scale_range(cp.light)
     print(cp.light)
     print(int(peak))
 

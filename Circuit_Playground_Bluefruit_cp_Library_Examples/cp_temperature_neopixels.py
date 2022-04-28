@@ -1,14 +1,11 @@
-"""THIS EXAMPLE REQUIRES A SEPARATE LIBRARY BE LOADED ONTO YOUR CIRCUITPY DRIVE.
-This example requires the simpleio.mpy library.
-
-This example use the temperature sensor on the CP, located next to the picture of the thermometer
+"""
+This example use the temperature sensor on the CPB, located next to the picture of the thermometer
 on the board. Try warming up the board to watch the number of NeoPixels lit up increase, or cooling
 it down to see the number decrease. You can set the min and max temperatures to make it more or
 less sensitive to temperature changes.
 """
 import time
 from adafruit_circuitplayground import cp
-import simpleio
 
 cp.pixels.auto_write = False
 cp.pixels.brightness = 0.3
@@ -17,9 +14,16 @@ cp.pixels.brightness = 0.3
 minimum_temp = 24
 maximum_temp = 30
 
+
+def scale_range(value):
+    """Scale a value from 0-320 (light range) to 0-9 (NeoPixel range, 10 total LEDs).
+    Allows remapping light value to pixel position for light meter demo."""
+    return round(value / (maximum_temp - minimum_temp) * 10)
+
+
 while True:
     # temperature value remapped to pixel position
-    peak = simpleio.map_range(cp.temperature, minimum_temp, maximum_temp, 0, 10)
+    peak = scale_range(cp.temperature)
     print(cp.temperature)
     print(int(peak))
 

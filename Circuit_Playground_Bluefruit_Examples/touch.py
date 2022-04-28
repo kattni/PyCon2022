@@ -1,4 +1,4 @@
-"""This example uses the capacitive touch pads around the outside of the CP, labeled A1-A6 and TX.
+"""This example uses the capacitive touchpads around the outside of the CPB, labeled A1-A6 and TX.
 (A0 is not a touch pad.) It prints to the serial console when you touch a pad. Try touching the
 touch pads to see the prints!"""
 import time

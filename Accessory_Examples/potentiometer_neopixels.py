@@ -4,14 +4,10 @@ Connect the blue clip on the potentiometer to pad A2.
 Connect the black clip to a GND pad.
 Connect the red clip to a 3.3v pad.
 
-THIS EXAMPLE REQUIRES A SEPARATE LIBRARY BE LOADED ONTO YOUR CIRCUITPY DRIVE.
-This example requires the simpleio.mpy library.
-
 Rotate the potentiometer knob to see the number of NeoPixels lit up on your CP change!"""
 import time
 import board
 import analogio
-import simpleio
 from adafruit_circuitplayground import cp
 
 cp.pixels.auto_write = False
@@ -23,9 +19,15 @@ def get_voltage(pin):
     return (pin.value * 3.3) / 65536
 
 
+def scale_range(value):
+    """Scale a value from 0-320 (light range) to 0-9 (NeoPixel range, 10 total LEDs).
+    Allows remapping light value to pixel position for light meter demo."""
+    return round(value / 3.3 * 10)
+
+
 while True:
     # Potentiometer voltage value remapped to pixel position
-    cp_peak = simpleio.map_range(get_voltage(potentiometer), 0, 3.3, 0, 10)
+    cp_peak = scale_range(get_voltage(potentiometer))
 
     for i in range(0, 10, 1):
         if i <= cp_peak:

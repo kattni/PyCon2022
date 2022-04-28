@@ -1,4 +1,4 @@
-"""This example uses the accelerometer in the center of the CP. Try moving the board around to see
+"""This example uses the accelerometer in the center of the CPB. Try moving the board around to see
 the values change!"""
 import time
 import board

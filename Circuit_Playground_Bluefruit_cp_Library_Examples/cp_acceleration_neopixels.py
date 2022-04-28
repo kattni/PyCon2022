@@ -1,5 +1,5 @@
 """If the switch is to the right, it will appear that nothing is happening. Move the switch to the
-left to see the NeoPixels light up in colors related to the accelerometer! The CP has an
+left to see the NeoPixels light up in colors related to the accelerometer! The CPB has an
 accelerometer in the center that returns (x, y, z) acceleration values. This program uses those
 values to light up the NeoPixels based on those acceleration values."""
 from adafruit_circuitplayground import cp

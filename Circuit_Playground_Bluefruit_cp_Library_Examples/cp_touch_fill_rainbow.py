@@ -1,5 +1,5 @@
-"""This example uses the capacitive touch pads on the CP. They are located around the outer edge
-of the board and are labeled A1-A6 and TX. (Audio is not a touch pad.) This example lights up all the
+"""This example uses the capacitive touchpads on the CPB. They are located around the outer edge
+of the board and are labeled A1-A6 and TX. (Audio is not a touchpad.) This example lights up all the
 NeoPixels a different color of the rainbow for each pad touched!"""
 import time
 from adafruit_circuitplayground import cp

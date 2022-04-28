@@ -1,6 +1,6 @@
 """This example requires seven wav files from the audio folder in Default_Files on the PyCon2022 GitHub
 repo. Download the files and copy them into a folder named "audio" on your CIRCUITPY drive. 
-Once copied, try touching the touch pads on A1-A6 and TX to hear a funky scale of notes!"""
+Once copied, try touching the touchpads on A1-A6 and TX to hear a funky scale of notes!"""
 import time
 from adafruit_circuitplayground import cp
 

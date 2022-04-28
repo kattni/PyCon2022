@@ -8,13 +8,9 @@ Connect the white clip on the NeoPixel strip to pad TX.
 Connect the black clip on the NeoPixel strip to a GND pad.
 Connect the red clip on the NeoPixel strip to the VOUT pad.
 
-THIS EXAMPLE REQUIRES A SEPARATE LIBRARY BE LOADED ONTO YOUR CIRCUITPY DRIVE.
-This example requires the simpleio.mpy library.
-
 Rotate the potentiometer knob to watch the number of pixels lit up on the strip change!"""
 import time
 import board
-import simpleio
 import analogio
 import neopixel
 
@@ -27,9 +23,15 @@ def get_voltage(pin):
     return (pin.value * 3.3) / 65536
 
 
+def scale_range(value):
+    """Scale a value from 0-320 (light range) to 0-9 (NeoPixel range, 10 total LEDs).
+    Allows remapping light value to pixel position for light meter demo."""
+    return round(value / 3.3 * 30)
+
+
 while True:
     # Potentiometer voltage value remapped to pixel position
-    strip_peak = simpleio.map_range(get_voltage(potentiometer), 0, 3.3, 0, 30)
+    strip_peak = scale_range(get_voltage(potentiometer))
 
     for j in range(0, 30, 1):
         if j <= strip_peak:
