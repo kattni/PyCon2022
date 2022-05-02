@@ -11,7 +11,7 @@ import board
 import keypad
 from adafruit_circuitplayground import cp
 
-cp.pixels.brightness = 0.1  # Set the pixel brightness to 30%.
+cp.pixels.brightness = 0.1  # Set the pixel brightness to 10%.
 
 # Set up the buttons using the keypad module.
 buttons = keypad.Keys((board.BUTTON_A, board.BUTTON_B), value_when_pressed=True, pull=True, max_events=1)
