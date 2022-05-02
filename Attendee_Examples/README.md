@@ -10,4 +10,5 @@ anything is still unclear, feel free to ask any of the CircuitPython folks for a
 **Please update the README with a name for and short description of your example as shown below!**
 
 ### Attendee Examples
-* Example name: Short example description. (Please delete this line when adding the first example.)
+* Theremin: Control speaker frequency with your hand using the light sensor.
+            Requires brightly lit room, such that your shadow changes significantly with your hand height.
